@@ -1,7 +1,7 @@
 ---
 title: "How I Made This Website"
 date: 2024-08-04T19:28:53-04:00
-draft: true
+draft: false
 tags: ["hugo", "jamstack", "how-to"]
 ---
 If you're reading this, that means I was able to get this website up and running. This site is running on the Hugo framework, which is a static site generator written in Go with the PaperMod theme. I have written a static site before with Pelican, which is based on Python. There are static site generators written in all sorts of languages -- I tend to gravitate towards the ones that I like for programming, but in reality, the language doesn't matter as much because most of the writing that I do is some form of markdown. If I wanted to start modifying the workings of the site, or modifying the template itself, then maybe I would dig into the code, but I digress. Here's a general overview of what I did to get this site off the ground, and how I overcame some snags along the way.
