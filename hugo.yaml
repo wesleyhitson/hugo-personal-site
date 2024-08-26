@@ -1,0 +1,38 @@
+baseURL: https://wesleyhitson.com/
+languageCode: en-us
+title: Wesley's Blog
+theme: ["PaperMod"]
+
+menu:
+  main:
+    - name: Archive
+      url: archives
+      weight: 5
+    - name: Search
+      url: search
+      weight: 10
+    - name: Tags
+      url: tags
+      weight: 10
+    # - name: WiKi
+    #   url: https://github.com/adityatelange/hugo-PaperMod/wiki/
+
+params:
+  homeInfoParams:
+    Title: Hey there
+    Content: Thanks for stopping by. These are mostly my thoughts on programming-related topics.
+
+  socialIcons:
+    - name: "github"
+      url: "https://github.com/wesleyhitson"
+    - name: "linkedin"
+      url: "https://www.linkedin.com/in/wesleyhitson/"
+
+  ShowReadingTime: true
+  ShowCodeCopyButtons: true
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # necessary for search
