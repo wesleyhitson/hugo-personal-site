@@ -2,6 +2,7 @@
 title: "Don't Use Redshift"
 date: 2024-10-24T21:49:56-04:00
 draft: false
+tags: ["redshift", "aws", "database"]
 ---
 Several years ago, I took over partial data ownership a web application at work. The front end was a mishmash of Javascript and PHP, and the backend was C#. There were some areas for improvement there, but it was workable. However, the most glaring problem was the database. The entire application was backed by as single node Amazon Redshift database. I am here to spread the word:
 
