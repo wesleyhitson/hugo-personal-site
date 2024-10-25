@@ -1,7 +1,8 @@
 ---
 title: "The SQL Function That Cost Me a Job Offer"
-date: 2024-08-07T22:43:25-04:00
-draft: true
+date: 2024-10-24T22:00:25-04:00
+draft: false
+tags: ["sql", "database", "interview", "job"]
 ---
 I was doing a bit of job searching recently, and I applied to a company throgh a referral from a friend who worked there, so it was a little more high stakes than just a run-of-the-mill interview, as I wanted to leave a good impression at the very minimum. This was a full stack position, and I made it to the technical assessment. There was a database component, a backend component (python), and a front end component (Vue.js). It was a take home assessment and I had 72 hours from the time I started it to finish. I started with the database component, then did the python portion, then finished up with the Vue.js stuff. I spread the work out over the first two days, then took the third day to optimize anything, double check my work, and make sure I didn't do anything wrong. All my tests passed. I was feeling good about every part of it. I submitted it, and began waiting to hear back.
 
@@ -11,6 +12,6 @@ A few days later, I had my review call. You know how you can tell pretty much fr
 
 #### COALESCE()
 
-The null coalescing function. How could I have been so foolish as to forget it? Every other langage has null coalescing operators, how could I forget in SQL? Why did I write a CASE statement to check for nulls rather than using an already existing function? Am I working at too low a level? Am I going to write the binary tree implementation of a database index next?? (Spoiler, I am not, because I am using Redshift and there are no indexes). Can I be trusted to even do logical checks correctly if I cannot null coalesce?? Forget for a minute that my solution was correct and passed all the test cases. You can't just let any n00b have access to your codebase, and certainly not if they don't know about COALESCE. Alas, I am clearly one of those n00bs, so back to the job search grind for me. 
+The null coalescing function. How could I have been so foolish as to forget it? Every other langage has null coalescing operators, how could I forget in SQL? Why did I write a CASE statement to check for nulls rather than using an already existing function? Am I working at too low a level? Am I going to write the binary tree implementation of a database index next?? (Spoiler, I am not, because I am using Redshift and [there are no indexes](/posts/dont-use-redshift/dont-use-redshift/)). Can I be trusted to even do logical checks correctly if I cannot null coalesce?? Forget for a minute that my solution was correct and passed all the test cases. You can't just let any n00b have access to your codebase, and certainly not if they don't know about COALESCE. Alas, I am clearly one of those n00bs, so back to the job search grind for me. 
 
 P.S. My friend found out later that day that the company was implementing a hiring freeze on 50% of their positions, so maybe that was just a BS excuse anyways. The world may never know. So don't get down on yourself.
