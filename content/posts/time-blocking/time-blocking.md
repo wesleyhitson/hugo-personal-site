@@ -1,0 +1,9 @@
+---
+title: "Time-Blocking"
+date: 2024-10-26T15:39:34-04:00
+draft: false
+tags: ["time management", "meetings", "deep work"]
+---
+This is not going to be anything revolutionary, but I have observed this about myself and what works for me. If I have 30 minutes or so between meetings, *very* little programming work is going to get done in that amount of time. By programming work, I mean the kind of deep work that you get done when you're in flow state and you aren't staring at the blank cursor. It ususally seems like it takes 10-15 minutes to get into that state. But I am definitely not going to get into that state if I know that I will only have 15 minutes in that state before my next meeting. So obviously, the best thing to do is to bunch all your meetings together. That's ideal, but not always possible. Most of my meetings are with people who are in way more meetings than me, and they are always changing the schedule, or running late, or double booked. So what to do when you are essentially subject to someone else's meeting schedule?
+
+First, there's a certain amount of suck that you will just have to embrace. But that's not super practical. What I like to do is take a bunch of admin work that I have to do and do it in that time. Whether it's creating Jira tasks, answering email, doing HR trainings, whatever it might be, essentially just make an "admin" meeting block for yourself between the existing meetings. Put it in your calendar, make it non-negotiable. Then, even if one of the meetings on either side of it gets cancelled, you don't have this regret about "oh well I should have started on something and I could have made better use of the time". Then if you finish early, go take a walk. Seriously, get up from your desk and stretch your legs. Sitting all day without getting up is not good for you. Even better, go outside and get some sunlight and fresh air. Your next meeting will probably suck slightly less if you do that.
