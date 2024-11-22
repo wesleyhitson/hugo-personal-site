@@ -24,4 +24,22 @@ Now I can open the file in VS Code and format it so it looks nice (`Shift + Alt 
 
 We can use Python's standard library json package to start wrangling the data from here.
 
+```python
+with open("parks.json", "r") as f:
+    data = json.load(f)
+
+data["total"]
+> '472'
+```
+
+Now, I can filter down to just the National Parks.
+
+```python
+for p in data["data"]:
+    if p["designation"] == "National Park":
+        print(p["fullName"])
+```
+
+I want to get some of the data in this json file into a CSV. I could also potentially load it straight into the database from here, but I also wanted to have a CSV available in case anyone wants it, and I think that format is a lot more palatable for most people. 
+
 Python comes with SQLite as part of the standard library. Just `import sqlite3`. I am using [these](https://docs.python.org/3/library/sqlite3.html) docs to guide me through this. 
