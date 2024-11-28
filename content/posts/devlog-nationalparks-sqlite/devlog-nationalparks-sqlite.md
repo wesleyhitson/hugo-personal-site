@@ -25,7 +25,7 @@ Now I can open the file in VS Code and format it so it looks nice (`Shift + Alt 
 We can use Python's standard library json package to start wrangling the data from here.
 
 ```python
-with open("parks.json", "r") as f:
+with open("parks.json", "r", encoding="UTF-8") as f:
     data = json.load(f)
 
 data["total"]
@@ -43,3 +43,50 @@ for p in data["data"]:
 I want to get some of the data in this json file into a CSV. I could also potentially load it straight into the database from here, but I also wanted to have a CSV available in case anyone wants it, and I think that format is a lot more palatable for most people. 
 
 Python comes with SQLite as part of the standard library. Just `import sqlite3`. I am using [these](https://docs.python.org/3/library/sqlite3.html) docs to guide me through this. 
+
+From here, the database code is relatively straightforward. I wrote it in a way that the `generate.py` script can be run over and over and produce the database. I am also not assuming the data from reading the CSV or the JSON file will be in memory, so I am re-opening the CSV to read it. I split the code into two parts - part 1 is reading the JSON file and creating the CSV, and part 2 is reading the CSV and creating the database. Those parts could be run independently if you just wanted one or the other.
+
+First, create the database.
+
+```python
+con = sqlite3.connect("parks.db")
+cur = con.cursor()
+```
+
+Then, create the table (and drop it if it already exists, since we may re-run this).
+```python
+cur.execute("DROP TABLE IF EXISTS parks")
+cur.execute("""CREATE TABLE IF NOT EXISTS parks(
+            id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 
+            name, parkCode, designation, states, latitude, 
+            longitude, visited TINYINE DEFAULT 0)""")
+```
+Now, we can read the CSV and populate the database.
+
+```python
+data = []
+with open("parks.csv", "r", encoding="UTF-8") as f:
+    reader = csv.reader(f)
+    for row in reader:
+        data.append(row)
+
+cur.executemany("""INSERT INTO parks 
+                    (name, parkCode, designation, states, latitude, longitude) 
+                VALUES (?, ?, ?, ?, ?, ?)""", 
+                data)
+con.commit()
+```
+
+And if we wanted to check our work.
+
+```python
+res = cur.execute("SELECT * FROM parks")
+for r in res:
+    print(r)
+```
+
+And that's it. We went and got some data from an API and loaded it into a database. We could now integrate this into an application of some sort if we wanted. Possible enhancements to this could be coming up with a website that displays the data and allows the user to mark which ones they've visited. The NPS app also lets you do this, but I think what could be really cool is using D3.js or some other library to create a map, and visually see the ones you've visited. It could also show you by state which parks you still haven't visited, and maybe inspire you to plan a trip.
+
+Along those lines, one enhancement to the data could be to split the "states" column data out into another table. Then you could more easily handle situations where a park is in multiple states (like Great Smokey Mountain National Park).
+
+Thanks for reading. If you have any suggestions for ways to continue to use this data, I'd love to hear them. Feel free to open a PR.
