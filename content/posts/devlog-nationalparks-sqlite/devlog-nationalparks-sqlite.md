@@ -1,8 +1,8 @@
 ---
 title: "DevLog: National Parks SQLite"
 date: 2024-11-16T12:49:30-04:00
-draft: true
-tags: ["api", "database", "sqlite", "csv", "data", "devlog"]
+draft: false
+tags: ["api", "database", "sqlite", "csv", "data", "devlog", "national parks", "america"]
 ---
 One thing that I love to do is visit National Parks. Visiting them all is on my bucketlist. Some people really like to collect the cancellation stamps; I am more concerned with witnessing and experienceing all these amazing natural areas. At the time of writing this, there are 63 parks, and I have been to about 18 of them. I say "about" because I am not 100% sure that I went to certain ones since I went when I was a kid (Grand Teton, Haleakala). So I will be going back to make sure that I hit those. But I digress. There are a couple different ways I could track which parks I have gone to. But, perhaps inevitably due to my occupation as a software developer, I have considered storing that information in a database. I thought about putting that info in a SQLite database so I could easily drop it in to various projects if I'm trying a new technology and need some quick data. Sure, I could use a mock data generator like [Mockaroo](https://www.mockaroo.com/), but it's fun to have real data sometimes, and also to be reminded of my goal.
 
