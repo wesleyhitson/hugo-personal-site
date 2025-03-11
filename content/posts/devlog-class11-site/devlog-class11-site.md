@@ -1,0 +1,11 @@
+---
+title: "DevLog: Class 11 Site"
+date: 2025-03-10T21:51:34-04:00
+draft: true
+tags: ["website", "static site", "devlog"]
+---
+In 2020, I started working on a bucket list item: building a Class 11 dune buggy to race the Baja 1000. The only problem was I knew very little about how to go about doing that. I had some basic car know-how, but this would be a serious engineering project that would involve acquiring several new skills (welding, engine timing, suspension alignment, electrical wiring, and others), as well as making a long-term project commitment that would take up a lot of my free time. If only I knew just how much of my free time... But, from the beginning, I had an idea that I wanted to document my progress and ideally, produce some sort of guide to what we did that would be useful to others who might want to also make a Class 11 car. I am finally starting on that site in earnest. I did buy a domain name, but to reduce overhead, I am starting with a GitHub pages site and hosting the images with a different service. I have an Instagram page as well, but that's more image-based, and I want to make something with more written instructions and not just pictures. I will keep the Instagram page, but maybe this site will be useful to someone. 
+
+I imagined it like a docs page for a software product with different sections for different parts of the car. Engine, roll cage, electrical, etc. I found a GitHub pages template called ["Just the Docs"](https://just-the-docs.com/). It took me a bit to figure out the best way to set it up. I initially created a repository called "class11", but it ended up being better to use their template to make a new repository. 
+
+Once the new repository was created, I went to (https://wesleyhitson.github.io/class11/)[https://wesleyhitson.github.io/class11/] to see the new site, and I was surprised it wasn't there. I discovered that the build had failed in GitHub. I had to go to the repository and go to Settings -> Pages -> Build and deployment, and select the "main" branch. Apparently none is selected by default. After I made that change and re-ran the build, the site loaded.
