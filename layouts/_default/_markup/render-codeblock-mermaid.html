@@ -1,0 +1,11 @@
+<pre class="mermaid">
+  {{- .Inner | safeHTML -}}
+</pre>
+
+{{ if not (.Page.Store.Get "mermaid_loaded") }}
+  {{ .Page.Store.Set "mermaid_loaded" true }}
+  <script type="module">
+    import mermaid from 'https://jsdelivr.net';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+{{ end }}
