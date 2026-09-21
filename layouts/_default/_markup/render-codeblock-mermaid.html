@@ -5,7 +5,30 @@
 {{ if not (.Page.Store.Get "mermaid_loaded") }}
   {{ .Page.Store.Set "mermaid_loaded" true }}
   <script type="module">
-    import mermaid from 'https://jsdelivr.net';
-    mermaid.initialize({ startOnLoad: true });
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@12/dist/mermaid.esm.min.mjs';
+
+    // 1. Check the data-theme attribute on the <html> tag
+    function getMermaidTheme() {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      return currentTheme === 'dark' ? 'dark' : 'default';
+    }
+
+    // 2. Initialize Mermaid with the correct theme on page load
+    mermaid.initialize({ 
+      startOnLoad: true,
+      theme: getMermaidTheme()
+    });
+
+    // 3. Watch for changes to the data-theme attribute (for live toggles)
+    const observer = new MutationObserver(() => {
+      // Re-initialize and force a re-render when the toggle is clicked
+      mermaid.initialize({ theme: getMermaidTheme() });
+      mermaid.run();
+    });
+
+    observer.observe(document.documentElement, { 
+      attributes: true, 
+      attributeFilter: ['data-theme'] 
+    });
   </script>
 {{ end }}

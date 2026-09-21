@@ -21,3 +21,6 @@ git submodule init
 git submodule update --remote --merge
 ```
 Then you can run with Hugo.
+
+# Deploy
+I am using Netlify to deploy rather than the native GitHub pages experience. I may change this at some point, but this is already setup and seems to work fine. Periodically, I do have to go in and update the env var in there to set what version of Hugo to use.
